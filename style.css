@@ -1,0 +1,98 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.navbar {
+  disp
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff66b2 !important; /* Màu hồng nhẹ */
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  margin: 0 10px;
+  color: #333 !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff66b2 !important;
+  font-weight: bold;
+}
+
+/* Active Link */
+.navbar-nav .nav-link.active {
+  color: #ff4081 !important;
+  font-weight: bold;
+}
+
+.nav-link{
+    display: flex;
+    list-style: none;
+}
+.banner {
+  background: url("image/banner2.avif") no-repeat center;
+  background-size: cover;  /* Đảm bảo ảnh phủ hết phần banner */
+  background-position: center; /* Căn giữa ảnh */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  padding: 100px 0; /* Thêm khoảng cách trên dưới để banner không quá nhỏ */
+  color: #484847;
+}
+
+.banner-title{
+    font-size: 90px;
+}
+.btn .btn-primary .back{
+    background-color: 
+}
+
+/* Danh mục */
+.categories .category-card {
+  background: pink;
+  padding: 50px;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Sản phẩm */
+.product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Đánh giá khách hàng */
+.feedback {
+  background: #f8f9fa;
+  padding: 50px 0;
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px;
+}
