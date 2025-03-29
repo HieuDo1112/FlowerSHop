@@ -1,11 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Quicksand:wght@300..700&display=swap");
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif !important;
   margin: 0;
   padding: 0;
   text-align: center;
 }
+
+code,
+pre {
+  font-family: "Inconsolata", monospace;
+}
+
+section + section {
+  margin-top: 80px; /* Tạo khoảng cách giữa các section */
+}
+
+.border-cus {
+  border-bottom: 1px solid #ebebeb;
+}
+
 .navbar {
-  disp
+  min-height: 120px;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
@@ -14,14 +30,19 @@ body {
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  color: #ff66b2 !important; /* Màu hồng nhẹ */
+  color: #ff66b2 !important;
+}
+
+.navbar-brand img {
+  height: 100px;
 }
 
 .navbar-nav .nav-link {
   font-size: 18px;
   margin: 0 10px;
-  color: #333 !important;
+  color: #a5a5a5 !important;
   transition: color 0.3s ease-in-out;
+  font-weight: 500;
 }
 
 .navbar-nav .nav-link:hover {
@@ -35,55 +56,168 @@ body {
   font-weight: bold;
 }
 
-.nav-link{
-    display: flex;
-    list-style: none;
+.nav-link {
+  display: flex;
+  list-style: none;
 }
+
+.btn-cus {
+  color: #a5a5a5 !important;
+  transition: 0.3s linear !important;
+}
+
+.btn-cus:hover {
+  background-color: #ff86b3 !important;
+  color: #fff !important;
+}
+
 .banner {
-  background: url("image/banner2.avif") no-repeat center;
-  background-size: cover;  /* Đảm bảo ảnh phủ hết phần banner */
-  background-position: center; /* Căn giữa ảnh */
-  background-repeat: no-repeat; /* Không lặp lại ảnh */
-  padding: 100px 0; /* Thêm khoảng cách trên dưới để banner không quá nhỏ */
+  background: url("image/banner.jpg") no-repeat center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
   color: #484847;
 }
 
-.banner-title{
-    font-size: 90px;
+.banner-title {
+  font-size: 90px;
 }
-.btn .btn-primary .back{
-    background-color: 
+
+.pink-btn {
+  background-color: #fc8eab !important;
+  color: #fff !important;
+  padding: 8px 30px !important;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pink-btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s linear;
 }
 
 /* Danh mục */
+.categories {
+  gap: 10px;
+}
+
 .categories .category-card {
-  background: pink;
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  text-align: center;
+  height: 350px;
+  width: 400px;
   border-radius: 10px;
   margin: 10px;
   font-size: 20px;
   font-weight: bold;
+  color: #d87388;
+}
+
+.category-card1 {
+  background-image: url("image/first-date.png");
+}
+
+.category-card2 {
+  background-image: url("image/women-day.png");
+}
+
+.category-card3 {
+  background-image: url("image/top-friday.png");
 }
 
 /* Sản phẩm */
-.product-card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
+.products-title {
+  color: #484848;
+}
+
+.products-des {
+  color: #8a8a8a;
+  font-weight: 500;
+}
+
+.best-selling {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
   text-align: center;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-card img {
-  max-width: 100%;
+h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+.categories {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.categories button {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.categories button.active,
+.categories button:hover {
+  background: #fc8eab;
+  color: #fff !important;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product {
+  background: white;
+  padding: 15px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
 }
 
-/* Đánh giá khách hàng */
-.feedback {
-  background: #f8f9fa;
-  padding: 50px 0;
+.product img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 160px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.rating {
+  color: #ff9800;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #939393;
+}
+
+.add-to-cart {
+  display: block;
+  text-decoration: none;
+  color: #575757;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .testimonial img {
@@ -92,7 +226,227 @@ body {
   border-radius: 50%;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 50px 0;
+}
+
+.testimonial-slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin: 0 15px;
+  min-width: 300px;
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+.testimonial-stars {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slider-control {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+/* Facebook Section */
+.facebook-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.facebook-text {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.facebook-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.facebook-input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 14px;
+}
+
+.facebook-button {
+  background-color: #f77d9e;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.facebook-button:hover {
+  background-color: #f5678a;
+}
+
 /* Footer */
 .footer {
-  margin-top: 50px;
+  border-top: 1px solid #ebebeb;
+  background-color: white;
+  padding: 50px 0;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  flex: 0 0 25%;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 120px;
+}
+
+.footer-info {
+  flex: 0 0 35%;
+  margin-bottom: 20px;
+}
+
+.footer-contact {
+  flex: 0 0 35%;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #f77d9e;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-contact-item i {
+  margin-right: 10px;
+  color: #444;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 15px;
+  color: #666;
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
 }

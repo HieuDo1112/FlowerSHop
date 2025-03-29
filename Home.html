@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flower Shop</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
-      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
@@ -21,21 +21,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
+    <!-- Header -->
     <header>
       <nav class="navbar navbar-expand-lg">
-        <div class="container d-flex">
+        <div class="container d-flex border-cus">
           <div class="navbar-brand">
             <img src="./image/Logo.png" alt="FlowerShop Logo" height="50" />
           </div>
-          <!-- <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
+
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto nav-link">
+            <ul class="navbar-nav mx-auto gap-5 nav-link">
               <li class="nav-item">
                 <a class="nav-link active" href="#">Trang chủ</a>
               </li>
@@ -47,17 +42,33 @@
               </li>
               <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
             </ul>
+
+            <div class="d-flex">
+              <button class="btn me-2 btn-cus">
+                <i class="fas fa-search"></i>
+              </button>
+
+              <button class="btn btn-cus">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+              <a class="btn btn-cus ms-2">Đăng nhập</a>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <!-- Banner -->
-    <section class="banner">
+    <section class="banner mb-5">
       <div class="container text-center">
         <h1 class="banner-title">LOVE</h1>
-        <p>Mỗi bó hoa là một câu chuyện, hãy tạo dấu ấn với người thân yêu.</p>
-        <button class="btn btn-primary back">Xem sản phẩm</button>
+        <p class="fw-normal">
+          MỖI BÔNG HOA LÀ MỘT CÂU <br />
+          CHUYỆN TÌNH YÊU. HÃY DÀNH <br />
+          TẶNG NGƯỜI BẠN YÊU THƯƠNG <br />
+          ĐIỀU TUYỆT VỜI NHẤT!
+        </p>
+        <button class="btn pink-btn mt-3">Xem sản phẩm</button>
       </div>
     </section>
 
@@ -65,58 +76,284 @@
     <section class="categories container">
       <div class="row text-center">
         <div class="col-md-4">
-          <div class="category-card">FIRST DATE</div>
+          <div class="category-card category-card1">
+            <h1>FIRST DATE</h1>
+            <p>MỘT BÓ HOA NHỎ BẮT ĐẦU MỘT TÌNH YÊU TO</p>
+            <button class="btn pink-btn">Mua ngay</button>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="category-card">WOMEN DAY</div>
+          <div class="category-card category-card2">
+            <h1>WOMEN DAY</h1>
+            <p>DÀNH TRỌN TÌNH YÊU THƯƠNG CHO NGƯỜI PHỤ NỮ CỦA BẠN</p>
+            <button class="btn pink-btn">Mua ngay</button>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="category-card">TOP FRIDAY</div>
+          <div class="category-card category-card3">
+            <h1>TOP FRIDAY</h1>
+            <p>DÀNH CHO MỘT KHÔNG GIAN <br />THƯ GIÃN</p>
+            <button class="btn pink-btn">Mua ngay</button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Sản phẩm bán chạy -->
-    <section class="products container">
-      <h2 class="text-center">Sản phẩm bán chạy nhất</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="product-card">
-            <img src="img/product1.jpg" alt="Bó hoa tình yêu" />
-            <h3>Bó hoa tình yêu</h3>
-            <p>Giá: 550.000đ</p>
-          </div>
+    <section class="best-selling">
+      <h2 class="products-title mb-4">Sản phẩm bán chạy nhất</h2>
+      <p class="products-des mb-4">Hoa - Nghệ Thuật Của Tình Cảm</p>
+      <div class="categories">
+        <button class="active" style="font-weight: 500">Bó hoa</button>
+        <button style="color: #8c8c8c; font-weight: 500">Giỏ hoa</button>
+        <button style="color: #8c8c8c; font-weight: 500">Hoa sinh nhật</button>
+        <button style="color: #8c8c8c; font-weight: 500">Bình hoa</button>
+        <button style="color: #8c8c8c; font-weight: 500">Giảm giá</button>
+      </div>
+      <div class="product-list">
+        <div class="product">
+          <img src="image/product1.png" alt="Bó hoa tình yêu" />
+          <h3>Bó hoa tình yêu</h3>
+          <p class="price">550.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
         </div>
-        <div class="col-md-4">
-          <div class="product-card">
-            <img src="img/product2.jpg" alt="Bó hoa giấy" />
-            <h3>Bó hoa giấy</h3>
-            <p>Giá: 450.000đ</p>
-          </div>
+        <div class="product">
+          <img src="image/product2.png" alt="Bó hoa tình yêu 2" />
+          <h3>Bó hoa tình yêu 2</h3>
+          <p class="price">650.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
         </div>
-        <div class="col-md-4">
-          <div class="product-card">
-            <img src="img/product3.jpg" alt="99 đóa hồng" />
-            <h3>99 đóa hồng</h3>
-            <p>Giá: 999.999đ</p>
-          </div>
+        <div class="product">
+          <img src="image/product3.png" alt="99 đóa hồng" />
+          <h3>99 đóa hồng</h3>
+          <p class="price">999.999đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product4.png" alt="Bó hoa mix" />
+          <h3>Bó hoa mix</h3>
+          <p class="price">450.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product5.png" alt="Bó hoa giấy" />
+          <h3>Bó hoa giấy</h3>
+          <p class="price">450.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product6.png" alt="Bó hoa Tulip" />
+          <h3>Bó hoa Tulip</h3>
+          <p class="price">200.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
         </div>
       </div>
     </section>
 
-    <!-- Đánh giá khách hàng -->
-    <section class="feedback text-center">
-      <h2>Khách hàng nói gì về chúng tôi?</h2>
-      <div class="testimonial">
-        <img src="img/avatar1.jpg" alt="Avatar" />
-        <p>"Dịch vụ tuyệt vời, hoa rất đẹp và tươi!"</p>
-        <h4>Vũ Văn Hùng</h4>
+    <!-- Sản phẩm mới nhất -->
+    <section class="best-selling">
+      <h2 class="products-title mb-4">Sản phẩm mới nhất</h2>
+      <p class="products-des mb-4">Hoa - Nghệ Thuật Của Tình Cảm</p>
+      <div class="categories">
+        <button class="active" style="font-weight: 500">Bó hoa</button>
+        <button style="color: #8c8c8c; font-weight: 500">Giỏ hoa</button>
+        <button style="color: #8c8c8c; font-weight: 500">Hoa sinh nhật</button>
+        <button style="color: #8c8c8c; font-weight: 500">Bình hoa</button>
+        <button style="color: #8c8c8c; font-weight: 500">Giảm giá</button>
+      </div>
+      <div class="product-list">
+        <div class="product">
+          <img src="image/product1.png" alt="Bó hoa tình yêu" />
+          <h3>Bó hoa tình yêu</h3>
+          <p class="price">550.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product2.png" alt="Bó hoa tình yêu 2" />
+          <h3>Bó hoa tình yêu 2</h3>
+          <p class="price">650.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product3.png" alt="99 đóa hồng" />
+          <h3>99 đóa hồng</h3>
+          <p class="price">999.999đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product4.png" alt="Bó hoa mix" />
+          <h3>Bó hoa mix</h3>
+          <p class="price">450.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product5.png" alt="Bó hoa giấy" />
+          <h3>Bó hoa giấy</h3>
+          <p class="price">450.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+        <div class="product">
+          <img src="image/product6.png" alt="Bó hoa Tulip" />
+          <h3>Bó hoa Tulip</h3>
+          <p class="price">200.000đ</p>
+          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">
+          Điều mà khách hàng muốn nói khi nhắc tới chúng tôi
+        </h2>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-card">
+            <img
+              src="https://placehold.co/100x100"
+              alt="Khách hàng"
+              class="testimonial-image" />
+            <div class="testimonial-quote">
+              "Tôi phải ở đây để đảm bảo rằng hoa này đúng là một lựa chọn tốt
+              nhất, tôi yêu nó rất."
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-name">Vũ Văn Hưng</div>
+          </div>
+
+          <div class="testimonial-card">
+            <img
+              src="https://placehold.co/100x100"
+              alt="Khách hàng"
+              class="testimonial-image" />
+            <div class="testimonial-quote">
+              "Ở đây rất đẹp, những bó hoa đuợc thiết kế rất tinh tế, tôi rất
+              yêu cửa hàng này."
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-name">Thị Trang</div>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-control">&#10094;</button>
+          <button class="slider-control">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facebook Section -->
+    <section class="facebook-section">
+      <div class="container">
+        <h2 class="section-title">facebook</h2>
+        <p class="facebook-text">
+          Bạn hãy theo dõi facebook của chúng tôi để được biết những sản phẩm
+          mới nhất một cách nhanh chóng.
+        </p>
+
+        <form class="facebook-form">
+          <input
+            type="email"
+            class="facebook-input"
+            placeholder="ciakiANflower@gmail.com"
+            required />
+        </form>
+
+        <button class="facebook-button">Follow</button>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-light text-center py-4">
-      <p>&copy; 2024 NA Flower Store. All rights reserved.</p>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="image/Logo.png" alt="AN Flower Logo" />
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h3 class="footer-title">Về chúng tôi:</h3>
+          <ul class="footer-links">
+            <li><a href="#">Liên hệ AN Flower Store</a></li>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Chính sách và điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-title">Địa chỉ của chúng tôi:</h3>
+          <div class="footer-contact-item">
+            <i>📍</i> Tầng 16 - Tòa nhà U-silk 01
+          </div>
+          <div class="footer-contact-item">
+            <i>✉️</i> cskiANflower@gmail.com
+          </div>
+          <div class="footer-contact-item"><i>📞</i> 0123456789</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="container">
+        <div class="copyright">© 2015 - Bản quyền thuộc về Bạch An</div>
+      </div>
     </footer>
   </body>
 </html>
