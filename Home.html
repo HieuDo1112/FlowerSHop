@@ -32,15 +32,17 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto gap-5 nav-link">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Trang chủ</a>
+                <a class="nav-link active" href="Home.html">Trang chủ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sản phẩm</a>
+                <a class="nav-link" href="Product.html">Sản phẩm</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Giới thiệu</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact.html">Liên hệ</a>
+              </li>
             </ul>
 
             <div class="d-flex">
@@ -48,10 +50,10 @@
                 <i class="fas fa-search"></i>
               </button>
 
-              <button class="btn btn-cus">
+              <a href="Cart.html" class="btn btn-cus">
                 <i class="fas fa-shopping-cart"></i>
-              </button>
-              <a class="btn btn-cus ms-2">Đăng nhập</a>
+              </a>
+              <!-- <a class="btn btn-cus ms-2">Đăng nhập</a> -->
             </div>
           </div>
         </div>
@@ -68,7 +70,7 @@
           TẶNG NGƯỜI BẠN YÊU THƯƠNG <br />
           ĐIỀU TUYỆT VỜI NHẤT!
         </p>
-        <button class="btn pink-btn mt-3">Xem sản phẩm</button>
+        <a href="Product.html" class="btn pink-btn mt-3">Xem sản phẩm</a>
       </div>
     </section>
 
@@ -100,105 +102,41 @@
     </section>
 
     <!-- Sản phẩm bán chạy -->
-    <section class="best-selling">
-      <h2 class="products-title mb-4">Sản phẩm bán chạy nhất</h2>
-      <p class="products-des mb-4">Hoa - Nghệ Thuật Của Tình Cảm</p>
-      <div class="categories">
-        <button class="active" style="font-weight: 500">Bó hoa</button>
-        <button style="color: #8c8c8c; font-weight: 500">Giỏ hoa</button>
-        <button style="color: #8c8c8c; font-weight: 500">Hoa sinh nhật</button>
-        <button style="color: #8c8c8c; font-weight: 500">Bình hoa</button>
-        <button style="color: #8c8c8c; font-weight: 500">Giảm giá</button>
+    <section class="best-selling-container">
+      <h2 class="best-selling-title mb-4">Sản phẩm bán chạy nhất</h2>
+      <p class="best-selling-desc mb-4">Hoa - Nghệ Thuật Của Tình Cảm</p>
+
+      <div class="best-selling-categories">
+        <button class="category-btn active" data-category="1">Bó hoa</button>
+        <button class="category-btn" data-category="2">Giỏ hoa</button>
+        <button class="category-btn" data-category="3">Hoa sinh nhật</button>
+        <button class="category-btn" data-category="4">Bình hoa</button>
+        <button class="category-btn" data-category="5">Giảm giá</button>
       </div>
-      <div class="product-list">
-        <div class="product">
-          <img src="image/product1.png" alt="Bó hoa tình yêu" />
-          <h3>Bó hoa tình yêu</h3>
-          <p class="price">550.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product2.png" alt="Bó hoa tình yêu 2" />
-          <h3>Bó hoa tình yêu 2</h3>
-          <p class="price">650.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product3.png" alt="99 đóa hồng" />
-          <h3>99 đóa hồng</h3>
-          <p class="price">999.999đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product4.png" alt="Bó hoa mix" />
-          <h3>Bó hoa mix</h3>
-          <p class="price">450.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product5.png" alt="Bó hoa giấy" />
-          <h3>Bó hoa giấy</h3>
-          <p class="price">450.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product6.png" alt="Bó hoa Tulip" />
-          <h3>Bó hoa Tulip</h3>
-          <p class="price">200.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-      </div>
+
+      <div class="best-selling-products" id="bestSellingList"></div>
+
+      <a href="Product.html" class="btn pink-btn mt-5 best-selling-btn"
+        >Xem tất cả</a
+      >
     </section>
 
     <!-- Sản phẩm mới nhất -->
-    <section class="best-selling">
-      <h2 class="products-title mb-4">Sản phẩm mới nhất</h2>
-      <p class="products-des mb-4">Hoa - Nghệ Thuật Của Tình Cảm</p>
-      <div class="categories">
-        <button class="active" style="font-weight: 500">Bó hoa</button>
-        <button style="color: #8c8c8c; font-weight: 500">Giỏ hoa</button>
-        <button style="color: #8c8c8c; font-weight: 500">Hoa sinh nhật</button>
-        <button style="color: #8c8c8c; font-weight: 500">Bình hoa</button>
-        <button style="color: #8c8c8c; font-weight: 500">Giảm giá</button>
+    <section class="newest-container">
+      <h2 class="newest-title mb-4">Sản phẩm mới nhất</h2>
+      <p class="newest-desc mb-4">Hoa - Nghệ Thuật Của Tình Cảm</p>
+
+      <div class="newest-categories">
+        <button class="category-btn active" data-category="1">Bó hoa</button>
+        <button class="category-btn" data-category="2">Giỏ hoa</button>
+        <button class="category-btn" data-category="3">Hoa sinh nhật</button>
+        <button class="category-btn" data-category="4">Bình hoa</button>
+        <button class="category-btn" data-category="5">Giảm giá</button>
       </div>
-      <div class="product-list">
-        <div class="product">
-          <img src="image/product1.png" alt="Bó hoa tình yêu" />
-          <h3>Bó hoa tình yêu</h3>
-          <p class="price">550.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product2.png" alt="Bó hoa tình yêu 2" />
-          <h3>Bó hoa tình yêu 2</h3>
-          <p class="price">650.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product3.png" alt="99 đóa hồng" />
-          <h3>99 đóa hồng</h3>
-          <p class="price">999.999đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product4.png" alt="Bó hoa mix" />
-          <h3>Bó hoa mix</h3>
-          <p class="price">450.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product5.png" alt="Bó hoa giấy" />
-          <h3>Bó hoa giấy</h3>
-          <p class="price">450.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-        <div class="product">
-          <img src="image/product6.png" alt="Bó hoa Tulip" />
-          <h3>Bó hoa Tulip</h3>
-          <p class="price">200.000đ</p>
-          <a href="#" class="add-to-cart">Thêm vào giỏ hàng</a>
-        </div>
-      </div>
+
+      <div class="newest-products" id="newestList"></div>
+
+      <a href="Product.html" class="btn pink-btn mt-5 newest-btn">Xem tất cả</a>
     </section>
 
     <!-- Testimonials Section -->
@@ -211,12 +149,12 @@
         <div class="testimonial-slider">
           <div class="testimonial-card">
             <img
-              src="https://placehold.co/100x100"
+              src="image/user2.png"
               alt="Khách hàng"
               class="testimonial-image" />
             <div class="testimonial-quote">
               "Tôi phải ở đây để đảm bảo rằng hoa này đúng là một lựa chọn tốt
-              nhất, tôi yêu nó rất."
+              nhất, tôi yêu nó rất nhiều."
             </div>
             <div class="testimonial-stars">★★★★★</div>
             <div class="testimonial-name">Vũ Văn Hưng</div>
@@ -224,7 +162,7 @@
 
           <div class="testimonial-card">
             <img
-              src="https://placehold.co/100x100"
+              src="image/user1.png"
               alt="Khách hàng"
               class="testimonial-image" />
             <div class="testimonial-quote">
@@ -232,7 +170,7 @@
               yêu cửa hàng này."
             </div>
             <div class="testimonial-stars">★★★★★</div>
-            <div class="testimonial-name">Thị Trang</div>
+            <div class="testimonial-name">Cao Thị Trang</div>
           </div>
         </div>
 
@@ -332,8 +270,7 @@
         <div class="footer-info">
           <h3 class="footer-title">Về chúng tôi:</h3>
           <ul class="footer-links">
-            <li><a href="#">Liên hệ AN Flower Store</a></li>
-            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="Contact.html">Liên hệ AN Flower Store</a></li>
             <li><a href="#">Chính sách và điều khoản sử dụng</a></li>
           </ul>
         </div>
@@ -344,7 +281,7 @@
             <i>📍</i> Tầng 16 - Tòa nhà U-silk 01
           </div>
           <div class="footer-contact-item">
-            <i>✉️</i> cskiANflower@gmail.com
+            <i>✉️</i> cskhANflower@gmail.com
           </div>
           <div class="footer-contact-item"><i>📞</i> 0123456789</div>
         </div>
@@ -352,8 +289,101 @@
 
       <!-- Footer -->
       <div class="container">
-        <div class="copyright">© 2015 - Bản quyền thuộc về Bạch An</div>
+        <div class="copyright">© 2025 - Bản quyền thuộc về Bạch An</div>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const bestSellingList = document.getElementById("bestSellingList");
+        const newestList = document.getElementById("newestList");
+        const bestSellingButtons = document.querySelectorAll(
+          ".best-selling-categories .category-btn"
+        );
+        const newestButtons = document.querySelectorAll(
+          ".newest-categories .category-btn"
+        );
+
+        let bestSellingCategory = 1; // Mặc định danh mục đầu tiên của Best-Selling
+        let newestCategory = 1; // Mặc định danh mục đầu tiên của Newest
+
+        fetchProducts(bestSellingCategory, bestSellingList, 0); // Best-Selling lấy từ index 0
+        fetchProducts(newestCategory, newestList, 3); // Newest lấy từ index 3
+
+        // Xử lý sự kiện chọn danh mục Best-Selling
+        bestSellingButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            bestSellingButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            bestSellingCategory = this.getAttribute("data-category");
+            fetchProducts(bestSellingCategory, bestSellingList, 0);
+          });
+        });
+
+        // Xử lý sự kiện chọn danh mục Newest
+        newestButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            newestButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            newestCategory = this.getAttribute("data-category");
+            fetchProducts(newestCategory, newestList, 3);
+          });
+        });
+
+        // Hàm fetch API lấy sản phẩm theo category
+        function fetchProducts(categoryId, targetList, startIndex) {
+          fetch("https://localhost:7206/api/Products")
+            .then((response) => response.json())
+            .then((data) => {
+              // Lọc sản phẩm theo categoryId
+              const filteredProducts = data.filter(
+                (product) => product.categoryId == categoryId
+              );
+              const selectedProducts = filteredProducts.slice(
+                startIndex,
+                startIndex + 3
+              ); // Lấy 3 sản phẩm theo vị trí
+              renderProducts(selectedProducts, targetList);
+            })
+            .catch((error) => console.error("Lỗi khi fetch API:", error));
+        }
+
+        // Hàm render danh sách sản phẩm (đã cập nhật)
+        function renderProducts(products, targetList) {
+          targetList.innerHTML = products
+            .map(
+              (product) => `
+      <div class="product" data-id="${product.id}">
+        <img src="https://localhost:7206${product.image}" alt="${
+                product.name
+              }" />
+        <h3>${product.name}</h3>
+        <p class="price">${product.price.toLocaleString("vi-VN")}đ</p>
+        <div class="product-actions">
+          <a href="Cart.html" class="add-to-cart" data-id="${
+            product.id
+          }">Thêm vào giỏ hàng</a>
+          
+        </div>
+      </div>
+    `
+            )
+            .join("");
+
+          // Thêm sự kiện click vào toàn bộ sản phẩm
+          targetList.querySelectorAll(".product").forEach((product) => {
+            product.addEventListener("click", function (e) {
+              // Chỉ xử lý nếu click không phải vào nút action
+              if (!e.target.closest(".product-actions")) {
+                const productId = this.dataset.id;
+                window.location.href = `Detail.html?id=${productId}`;
+              }
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>

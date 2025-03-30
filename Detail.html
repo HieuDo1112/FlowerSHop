@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flower Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="./DetailStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container d-flex border-cus">
+          <div class="navbar-brand">
+            <img src="./image/Logo.png" alt="FlowerShop Logo" height="50" />
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-5 nav-link">
+              <li class="nav-item">
+                <a class="nav-link" href="Home.html">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Product.html">Sản phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Giới thiệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact.html">Liên hệ</a>
+              </li>
+            </ul>
+
+            <div class="d-flex">
+              <button class="btn me-2 btn-cus">
+                <i class="fas fa-search"></i>
+              </button>
+
+              <a href="Cart.html" class="btn btn-cus">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+              <a class="btn btn-cus ms-2">Đăng nhập</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb">
+        <!-- <li><a href="Home.html">Trang chủ</a></li>
+        <li><a href="Product.html">Sản phẩm</a></li>
+        <li>Bó hoa tình yêu</li> -->
+      </ul>
+
+      <!-- Product Detail -->
+      <div class="product-detail">
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+          <!-- <img
+            src="image/detail1.png"
+            alt="Bó hoa tình yêu"
+            class="main-image" />
+          <div class="thumbnail-container">
+            <img
+              src="image/product6.png"
+              alt="Thumbnail 1"
+              class="thumbnail active" />
+          </div> -->
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <h1 class="product-title"></h1>
+          <div class="product-price"></div>
+          <div class="product-short-description">
+            <p>
+              <!-- Bó hoa Tình Yêu từ NA Flower Store là sự kết hợp tình tế giữa
+              những bông hồng đỏ rực rỡ – biểu tượng của tình yêu mãnh liệt,
+              cùng những bông hồa trắng tinh khôi và vẻ đẹp thuần khiết của
+              nhánh lá xanh. Mỗi cành hoa đều được chọn lọc kỹ lưỡng, mang đến
+              thông điệp yêu thương chan chứa nhất. -->
+            </p>
+          </div>
+          <button class="add-to-cart">Thêm vào giỏ hàng</button>
+          <div class="delivery-info">
+            <p>
+              <i>✓</i> Đảm bảo 100% hoa tươi - Hoàn tiền gấp đôi nếu hoa bị dập
+              nát, khô héo
+            </p>
+            <p>
+              <i>✓</i> Tận hưởng dịch vụ thanh toán tận nhà - Thanh toán tại nhà
+            </p>
+            <p><i>✓</i> Trả hoa và đổi hoa dễ dàng trong 1 giờ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descriptions Section -->
+      <div class="descriptions-section">
+        <h2 class="descriptions-title">Mô tả</h2>
+
+        <div class="description">
+          <div class="description-header">
+            <div class="description-author">
+              Bó Hoa Tình Yêu - Đốn Tim Yêu Thương ❤️
+            </div>
+          </div>
+          <div class="description-content">
+            <p>
+              Bó Hoa Tình Yêu từ AN Flower Store là sự kết hợp tinh tế giữa
+              những bông hồng đỏ rực rỡ – biểu tượng của tình yêu mãnh liệt,
+              cùng những bông hoa trắng tinh khôi và vẻn cạn. Mỗi cành hoa đều
+              được chọn lọc kỹ lưỡng, mang đến thông điệp yêu thương chan chứa
+              nhất.
+            </p>
+          </div>
+        </div>
+
+        <div class="description">
+          <div class="description-header">
+            <div class="description-author">
+              ❤️ AN Flower Store - gửi gắm những cảm xúc chân thành! ❤️
+            </div>
+          </div>
+          <div class="description-content">
+            <p>
+              Dành tặng người yêu, và họ sẽ mỉm cười đặc biệt của bạn trong
+              những dịp đặc biệt như, ngày Valentine, sinh nhật, hoặc đơn giản
+              chỉ là nói lời yêu thương! ❤️
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div class="related-products">
+        <div class="category-header">
+          <h1 class="category-title">
+            <span class="category-title-black">Sản phẩm </span>
+            <span class="category-title-pink">Liên Quan</span>
+          </h1>
+        </div>
+
+        <div class="products-grid">
+          <a href="#" class="product-card">
+            <img
+              src="https://placehold.co/300x200"
+              alt="Bó hoa Tulip"
+              class="product-card-image" />
+            <div class="product-card-info">
+              <h3 class="product-card-title">Bó hoa Tulip</h3>
+              <div class="product-card-price">200.000đ</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="image/Logo.png" alt="AN Flower Logo" />
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h3 class="footer-title">Về chúng tôi:</h3>
+          <ul class="footer-links">
+            <li><a href="Contact.html">Liên hệ AN Flower Store</a></li>
+            <li><a href="#">Chính sách và điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-title">Địa chỉ của chúng tôi:</h3>
+          <div class="footer-contact-item">
+            <i>📍</i> Tầng 16 - Tòa nhà U-silk 01
+          </div>
+          <div class="footer-contact-item">
+            <i>✉️</i> cskhANflower@gmail.com
+          </div>
+          <div class="footer-contact-item"><i>📞</i> 0123456789</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="container">
+        <div class="copyright">© 2025 - Bản quyền thuộc về Bạch An</div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Lấy productId từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+
+        if (!productId) {
+          window.location.href = "404.html";
+          return;
+        }
+
+        try {
+          // Fetch chi tiết sản phẩm
+          const response = await fetch(
+            `https://localhost:7206/api/Products/${productId}`
+          );
+          if (!response.ok) throw new Error("Product not found");
+
+          const product = await response.json();
+
+          // Cập nhật breadcrumb
+          updateBreadcrumb(product);
+
+          // Cập nhật gallery ảnh
+          updateProductGallery(product);
+
+          // Cập nhật thông tin sản phẩm
+          updateProductInfo(product);
+
+          // Load sản phẩm liên quan
+          await fetchRelatedProducts(product.categoryId, product.id);
+        } catch (error) {
+          console.error("Error:", error);
+          window.location.href = "404.html";
+        }
+      });
+
+      // Hàm cập nhật breadcrumb
+      function updateBreadcrumb(product) {
+        const breadcrumb = document.querySelector(".breadcrumb");
+        breadcrumb.innerHTML = `
+    <li><a href="Home.html">Trang chủ</a></li>
+    <li><a href="Product.html">Sản phẩm</a></li>
+    <li>${product.name}</li>
+  `;
+      }
+
+      // Hàm cập nhật gallery ảnh
+      function updateProductGallery(product) {
+        const gallery = document.querySelector(".product-gallery");
+        gallery.innerHTML = `
+    <img src="https://localhost:7206${product.image}" 
+         alt="${product.name}" 
+         class="main-image" />
+    <div class="thumbnail-container">
+      <img src="https://localhost:7206${product.image}" 
+           alt="Thumbnail" 
+           class="thumbnail active" />
+      <!-- Có thể thêm nhiều thumbnail khác nếu có -->
+    </div>
+  `;
+      }
+
+      // Hàm cập nhật thông tin sản phẩm
+      function updateProductInfo(product) {
+        document.querySelector(".product-title").textContent = product.name;
+        document.querySelector(
+          ".product-price"
+        ).textContent = `${product.price.toLocaleString("vi-VN")}đ`;
+
+        const shortDesc = document.querySelector(
+          ".product-short-description p"
+        );
+        shortDesc.textContent = product.shortDescription;
+
+        // Thêm mô tả đầy đủ nếu có phần đó trong HTML
+        const fullDesc = document.querySelector(".product-full-description");
+        if (fullDesc) {
+          fullDesc.innerHTML = `<p>${product.description}</p>`;
+        }
+
+        // Cập nhật các thông tin khác nếu cần
+        const categoryInfo = document.querySelector(".product-category");
+        if (categoryInfo) {
+          categoryInfo.textContent = `Danh mục: ${product.category.name}`;
+        }
+
+        const descriptionAuthor = document.querySelector(".description-author");
+        const descriptionContent = document.querySelector(
+          ".description-content p"
+        );
+
+        if (descriptionAuthor) {
+          descriptionAuthor.textContent = `❤️ ${product.name} ❤️`;
+        }
+
+        if (descriptionContent) {
+          descriptionContent.textContent = product.description;
+        }
+      }
+
+      // Hàm fetch sản phẩm liên quan
+      async function fetchRelatedProducts(categoryId, currentProductId) {
+        try {
+          const response = await fetch(
+            `https://localhost:7206/api/Products?categoryId=${categoryId}`
+          );
+          const products = await response.json();
+
+          // Lọc bỏ sản phẩm hiện tại và lấy tối đa 4 sản phẩm
+          const relatedProducts = products
+            .filter((p) => p.id != currentProductId)
+            .slice(0, 4);
+
+          renderRelatedProducts(relatedProducts);
+        } catch (error) {
+          console.error("Lỗi khi lấy sản phẩm liên quan:", error);
+          document.querySelector(".products-grid").innerHTML =
+            '<p class="no-products">Hiện chưa có sản phẩm liên quan</p>';
+        }
+      }
+
+      // Hàm render sản phẩm liên quan
+      function renderRelatedProducts(products) {
+        const productsGrid = document.querySelector(".products-grid");
+        if (!productsGrid) return;
+
+        if (products.length === 0) {
+          productsGrid.innerHTML =
+            '<p class="no-products">Hiện chưa có sản phẩm liên quan</p>';
+          return;
+        }
+
+        productsGrid.innerHTML = products
+          .map(
+            (product) => `
+    <a href="Detail.html?id=${product.id}" class="product-card">
+      <img src="https://localhost:7206${product.image}" 
+           alt="${product.name}" 
+           class="product-card-image" />
+      <div class="product-card-info">
+        <h3 class="product-card-title">${product.name}</h3>
+        <div class="product-card-price">${product.price.toLocaleString(
+          "vi-VN"
+        )}đ</div>
+      </div>
+    </a>
+  `
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>
