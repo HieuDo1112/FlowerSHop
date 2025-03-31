@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="./ContactStyle.css" />
+    <link rel="stylesheet" href="./AboutStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -38,10 +38,10 @@
                 <a class="nav-link" href="Product.html">Sản phẩm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="About.html">Giới thiệu</a>
+                <a class="nav-link active" href="About.html">Giới thiệu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="Contact.html">Liên hệ</a>
+                <a class="nav-link" href="Contact.html">Liên hệ</a>
               </li>
             </ul>
 
@@ -62,49 +62,80 @@
 
     <div class="category-header">
       <h1 class="category-title">
-        <span class="category-title-black">Liên Hệ</span>
+        <span class="category-title-black">Về</span>
         <span class="category-title-pink">Chúng Tôi</span>
       </h1>
     </div>
 
-    <!-- Contact-->
-    <section class="contact-section">
-      <div class="contact-form">
-        <form id="contactForm">
-          <label for="firstName">Họ</label>
-          <input
-            type="text"
-            id="firstName"
-            placeholder="VD: Bạch Khánh"
-            required />
-
-          <label for="lastName">Tên</label>
-          <input type="text" id="lastName" placeholder="VD: An" required />
-
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="VD: bachkhanhan@gmail.com"
-            required />
-
-          <label for="message">Lời nhắn</label>
-          <textarea
-            id="message"
-            placeholder="VD: Tôi muốn mua sản phẩm"
-            rows="4"
-            required></textarea>
-
-          <button type="submit" class="submit-btn">Gửi thông tin</button>
-        </form>
+    <section class="about-container">
+      <div class="about-header">
+        <h1>Về Chúng Tôi</h1>
+        <h2>Shop bán hoa chất lượng nhất</h2>
       </div>
-      <div class="contact-image">
-        <img src="./image/contact.png" alt="Contact Image" />
+
+      <div class="reasons-section">
+        <h3 class="reasons-title">Tại sao chọn chúng tôi?</h3>
+
+        <div class="reason-item">
+          <h4 class="reason-title">
+            <i class="fas fa-award"></i> Chất lượng hoa tươi hàng đầu
+          </h4>
+          <p class="reason-content">
+            Tại NA Flower Store, chúng tôi cam kết mang đến những bông hoa tươi
+            nhất, được chọn lọc kỹ càng từ những vườn hoa chất lượng cao. Mỗi
+            bông hoa đều được chăm sóc cẩn thận, đảm bảo tươi lâu và vẻ đẹp rực
+            rỡ.
+          </p>
+        </div>
+
+        <div class="reason-item">
+          <h4 class="reason-title">
+            <i class="fas fa-palette"></i> Thiết kế tinh tế - Phù hợp mọi dịp
+          </h4>
+          <p class="reason-content">
+            Chúng tôi cung cấp nhiều kiểu dáng bó hoa, giỏ hoa và lẵng hoa sang
+            trọng, phù hợp cho mọi sự kiện sinh nhật, cưới hỏi, kỷ niệm hay chỉ
+            đơn giản là món quà tặng người thân yêu.
+          </p>
+        </div>
+
+        <div class="reason-item">
+          <h4 class="reason-title">
+            <i class="fas fa-truck"></i> Dịch vụ giao hoa nhanh chóng
+          </h4>
+          <p class="reason-content">
+            NA Flower Store hỗ trợ giao hoa tận nơi trong thời gian ngắn, đảm
+            bảo hoa luôn đến tay bạn với trạng thái tươi mới và nguyên vẹn.
+          </p>
+        </div>
+
+        <div class="reason-item">
+          <h4 class="reason-title">
+            <i class="fas fa-shopping-cart"></i> Đặt hàng dễ dàng - Thanh toán
+            linh hoạt
+          </h4>
+          <p class="reason-content">
+            Chỉ với vài cú nhấp chuột trên website, bạn có thể chọn ngay một bó
+            hoa ưng ý. Chúng tôi hỗ trợ nhiều phương thức thanh toán tiện lợi,
+            giúp bạn mua sắm nhanh chóng và an toàn.
+          </p>
+        </div>
+
+        <div class="reason-item">
+          <h4 class="reason-title">
+            <i class="fas fa-headset"></i> Dịch vụ chăm sóc khách hàng tận tâm
+          </h4>
+          <p class="reason-content">
+            Đội ngũ NA Flower Store luôn sẵn sàng tư vấn và hỗ trợ để bạn có
+            trải nghiệm mua hoa tốt nhất.
+          </p>
+        </div>
+      </div>
+
+      <div class="slogan">
+        NA Flower Store - Lan tỏa yêu thương qua từng cánh hoa ®
       </div>
     </section>
-    <p id="successMessage" class="success-message" style="display: none">
-      Cảm ơn bạn đã liên hệ!
-    </p>
 
     <!-- Footer -->
     <footer class="footer">
@@ -197,17 +228,6 @@
       </div>
     </footer>
 
-    <script>
-      // Handle gui form
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Chặn reload trang
-
-          document.getElementById("successMessage").style.display = "block";
-
-          this.reset(); // Reset form sau khi gửi
-        });
-    </script>
+    <script></script>
   </body>
 </html>

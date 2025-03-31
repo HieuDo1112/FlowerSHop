@@ -38,7 +38,7 @@
                 <a class="nav-link" href="Product.html">Sản phẩm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Giới thiệu</a>
+                <a class="nav-link" href="About.html">Giới thiệu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="Contact.html">Liên hệ</a>
@@ -139,7 +139,7 @@
       <a href="Product.html" class="btn pink-btn mt-5 newest-btn">Xem tất cả</a>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials  -->
     <section class="testimonials">
       <div class="container">
         <h2 class="section-title">
@@ -181,7 +181,7 @@
       </div>
     </section>
 
-    <!-- Facebook Section -->
+    <!-- Facebook -->
     <section class="facebook-section">
       <div class="container">
         <h2 class="section-title">facebook</h2>
@@ -206,7 +206,7 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-logo">
-          <img src="image/Logo.png" alt="AN Flower Logo" />
+          <img src="image/Logo.png" alt="NA Flower Logo" />
           <div class="social-icons">
             <a href="#" class="social-icon">
               <svg
@@ -270,7 +270,7 @@
         <div class="footer-info">
           <h3 class="footer-title">Về chúng tôi:</h3>
           <ul class="footer-links">
-            <li><a href="Contact.html">Liên hệ AN Flower Store</a></li>
+            <li><a href="Contact.html">Liên hệ NA Flower Store</a></li>
             <li><a href="#">Chính sách và điều khoản sử dụng</a></li>
           </ul>
         </div>
@@ -281,7 +281,7 @@
             <i>📍</i> Tầng 16 - Tòa nhà U-silk 01
           </div>
           <div class="footer-contact-item">
-            <i>✉️</i> cskhANflower@gmail.com
+            <i>✉️</i> cskhNAflower@gmail.com
           </div>
           <div class="footer-contact-item"><i>📞</i> 0123456789</div>
         </div>
@@ -289,7 +289,7 @@
 
       <!-- Footer -->
       <div class="container">
-        <div class="copyright">© 2025 - Bản quyền thuộc về Bạch An</div>
+        <div class="copyright">© 2025 - Bản quyền thuộc về Ngọc Ánh</div>
       </div>
     </footer>
 
@@ -350,7 +350,7 @@
             .catch((error) => console.error("Lỗi khi fetch API:", error));
         }
 
-        // Hàm render danh sách sản phẩm (đã cập nhật)
+        // Hàm render danh sách sản phẩm (updated)
         function renderProducts(products, targetList) {
           targetList.innerHTML = products
             .map(
@@ -375,7 +375,7 @@
           // Thêm sự kiện click vào toàn bộ sản phẩm
           targetList.querySelectorAll(".product").forEach((product) => {
             product.addEventListener("click", function (e) {
-              // Chỉ xử lý nếu click không phải vào nút action
+              // Chỉ xử lý nếu click không phải vào nút action(except actio)
               if (!e.target.closest(".product-actions")) {
                 const productId = this.dataset.id;
                 window.location.href = `Detail.html?id=${productId}`;

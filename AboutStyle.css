@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Quicksand:wght@300..700&display=swap");
+
+body {
+  font-family: "Quicksand", sans-serif !important;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+code,
+pre {
+  font-family: "Inconsolata", monospace;
+}
+
+section + section {
+  margin-top: 80px; /* Tạo khoảng cách giữa các section */
+}
+
+.border-cus {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.navbar {
+  min-height: 120px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff66b2 !important;
+}
+
+.navbar-brand img {
+  height: 100px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  margin: 0 10px;
+  color: #a5a5a5 !important;
+  transition: color 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff66b2 !important;
+  font-weight: bold;
+}
+
+/* Active Link */
+.navbar-nav .nav-link.active {
+  color: #ff4081 !important;
+  font-weight: bold;
+}
+
+.nav-link {
+  display: flex;
+  list-style: none;
+}
+
+.btn-cus {
+  color: #a5a5a5 !important;
+  transition: 0.3s linear !important;
+}
+
+.btn-cus:hover {
+  background-color: #ff86b3 !important;
+  color: #fff !important;
+}
+
+/* Category Header */
+.category-header {
+  width: 1200px;
+  margin: 30px auto 20px auto;
+  background-color: #ffebf1;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 24px;
+  display: inline-block;
+}
+
+.category-title-black {
+  color: #333;
+  font-weight: 900;
+}
+
+.category-title-pink {
+  color: #f77d9e;
+  font-weight: 900;
+}
+
+/* Container chính */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Tiêu đề chính */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: #d23e57;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.about-header h2 {
+  font-size: 1.8rem;
+  color: #555;
+  font-weight: 600;
+}
+
+/* Phần lý do chọn */
+.reasons-section {
+  margin-bottom: 50px;
+}
+
+.reasons-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #d23e57;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Các lý do */
+.reason-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reason-title {
+  font-size: 1.3rem;
+  color: #d23e57;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.reason-title i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.reason-content {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Khẩu hiệu cuối */
+.slogan {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #d23e57;
+  font-weight: 600;
+  margin-top: 50px;
+  font-style: italic;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #ebebeb;
+  background-color: white;
+  padding: 50px 0;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  flex: 0 0 25%;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 120px;
+}
+
+.footer-info {
+  flex: 0 0 35%;
+  margin-bottom: 20px;
+}
+
+.footer-contact {
+  flex: 0 0 35%;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #f77d9e;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-contact-item i {
+  margin-right: 10px;
+  color: #444;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 15px;
+  color: #666;
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
