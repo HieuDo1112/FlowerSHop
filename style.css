@@ -20,6 +20,16 @@ section + section {
   border-bottom: 1px solid #ebebeb;
 }
 
+.container.d-flex.border-cus {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.container.d-flex.border-cus {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
 .navbar {
   min-height: 120px;
   background: white;
@@ -391,6 +401,7 @@ section + section {
   margin-top: 15px;
   font-size: 14px;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .facebook-button:hover {
