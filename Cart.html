@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="./CartStyle.css" />
+    <link rel="stylesheet" href="./css/CartStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -69,53 +69,12 @@
 
     <!-- Cart -->
     <div class="cart-container">
-      <div class="cart-items">
-        <div class="cart-item" data-price="550000">
-          <img
-            src="https://via.placeholder.com/80x80/f5e1e4/d23e57?text=B6+Hoa"
-            alt="B6 hoa tình yêu"
-            class="item-image" />
-          <div class="item-info">
-            <div class="item-name">Bó hoa tình yêu</div>
-            <div class="item-price">550.000đ</div>
-          </div>
-
-          <div class="item-quantity">
-            <div class="quantity-control">
-              <button class="quantity-btn minus">-</button>
-              <input type="number" class="quantity-input" value="1" min="1" />
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-          <div class="item-total">5.500.000đ</div>
-          <button class="ms-4 item-remove">Xóa</button>
-        </div>
-
-        <div class="cart-item" data-price="650000">
-          <img
-            src="https://via.placeholder.com/80x80/f5e1e4/d23e57?text=B6+Hoa+2"
-            alt="B6 hoa tình yêu 2"
-            class="item-image" />
-          <div class="item-info">
-            <div class="item-name">Bó hoa tình yêu 2</div>
-            <div class="item-price">650.000đ</div>
-          </div>
-          <div class="item-quantity">
-            <div class="quantity-control">
-              <button class="quantity-btn minus">-</button>
-              <input type="number" class="quantity-input" value="1" min="1" />
-              <button class="quantity-btn plus">+</button>
-            </div>
-          </div>
-          <div class="item-total">3.250.000đ</div>
-          <button class="ms-4 item-remove">Xóa</button>
-        </div>
-      </div>
+      <div class="cart-items"></div>
 
       <div class="cart-summary">
         <div class="total-label">Tổng Đơn Hàng:</div>
-        <div class="total-amount">8.750.000đ</div>
-        <button class="checkout-btn">Đặt hàng</button>
+        <div class="total-amount"></div>
+        <button class="checkout-btn" id="checkoutBtn">Thanh toán</button>
       </div>
     </div>
 
@@ -210,118 +169,6 @@
       </div>
     </footer>
 
-    <script>
-      // Cart handle eventt
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Lấy tất cả các sản phẩm trong giỏ hàng
-        const cartItemsContainer = document.querySelector(".cart-items");
-        let cartItems = document.querySelectorAll(".cart-item");
-        const totalAmountElement = document.querySelector(".total-amount");
-
-        // Hàm định dạng số tiền
-        function formatMoney(amount) {
-          return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ";
-        }
-
-        // Hàm tính toán tổng giá trị đơn hàng
-        function calculateTotal() {
-          let total = 0;
-
-          cartItems = document.querySelectorAll(".cart-item"); // Cập nhật lại danh sách sản phẩm
-
-          cartItems.forEach((item) => {
-            const price = parseInt(item.dataset.price);
-            const quantity = parseInt(
-              item.querySelector(".quantity-input").value
-            );
-            const itemTotal = price * quantity;
-
-            // Cập nhật tổng giá cho từng sản phẩm
-            item.querySelector(".item-total").textContent =
-              formatMoney(itemTotal);
-
-            // Cộng vào tổng đơn hàng
-            total += itemTotal;
-          });
-
-          // Cập nhật tổng đơn hàng
-          totalAmountElement.textContent = formatMoney(total);
-        }
-
-        // Hàm xóa sản phẩm
-        function setupRemoveButtons() {
-          document.querySelectorAll(".item-remove").forEach((btn) => {
-            btn.addEventListener("click", function () {
-              const item = this.closest(".cart-item");
-              item.style.animation = "fadeOut 0.3s ease";
-
-              setTimeout(() => {
-                item.remove();
-                calculateTotal();
-
-                // Hiển thị thông báo khi giỏ hàng trống
-                if (document.querySelectorAll(".cart-item").length === 0) {
-                  cartItemsContainer.innerHTML =
-                    '<div class="empty-cart">Giỏ hàng của bạn đang trống</div>';
-                }
-              }, 300);
-            });
-          });
-        }
-
-        // Thêm sự kiện cho các nút +/-
-        function setupQuantityButtons() {
-          cartItems.forEach((item) => {
-            const minusBtn = item.querySelector(".minus");
-            const plusBtn = item.querySelector(".plus");
-            const quantityInput = item.querySelector(".quantity-input");
-
-            minusBtn.addEventListener("click", function () {
-              let value = parseInt(quantityInput.value);
-              if (value > 1) {
-                quantityInput.value = value - 1;
-                calculateTotal();
-              }
-            });
-
-            plusBtn.addEventListener("click", function () {
-              let value = parseInt(quantityInput.value);
-              quantityInput.value = value + 1;
-              calculateTotal();
-            });
-
-            quantityInput.addEventListener("change", function () {
-              if (this.value < 1) this.value = 1;
-              calculateTotal();
-            });
-          });
-        }
-
-        // Thêm animation cho xóa sản phẩm( mượt mà hơn kkkk)
-        const style = document.createElement("style");
-        style.textContent = `
-                @keyframes fadeOut {
-                    from { opacity: 1; transform: translateX(0); }
-                    to { opacity: 0; transform: translateX(-50px); }
-                }
-                
-                .empty-cart {
-                    text-align: center;
-                    padding: 30px;
-                    color: #888;
-                    font-size: 18px;
-                }
-            `;
-        document.head.appendChild(style);
-
-        // Khởi tạo các sự kiện
-        setupRemoveButtons();
-        setupQuantityButtons();
-
-        // Calculate lần đầu khi tải trang
-        calculateTotal();
-      });
-    </script>
+    <script src="./js/CartHandle.js"></script>
   </body>
 </html>

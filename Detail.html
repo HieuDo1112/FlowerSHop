@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="./DetailStyle.css" />
+    <link rel="stylesheet" href="./css/DetailStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -61,40 +61,19 @@
 
     <main class="container">
       <!-- Breadcrumb -->
-      <ul class="breadcrumb">
-        <!-- <li><a href="Home.html">Trang chủ</a></li>
-        <li><a href="Product.html">Sản phẩm</a></li>
-        <li>Bó hoa tình yêu</li> -->
-      </ul>
+      <ul class="breadcrumb"></ul>
 
       <!-- Product Detail -->
       <div class="product-detail">
         <!-- Product Gallery -->
-        <div class="product-gallery">
-          <!-- <img
-            src="image/detail1.png"
-            alt="Bó hoa tình yêu"
-            class="main-image" />
-          <div class="thumbnail-container">
-            <img
-              src="image/product6.png"
-              alt="Thumbnail 1"
-              class="thumbnail active" />
-          </div> -->
-        </div>
+        <div class="product-gallery"></div>
 
         <!-- Product Info -->
         <div class="product-info">
           <h1 class="product-title"></h1>
           <div class="product-price"></div>
           <div class="product-short-description">
-            <p>
-              <!-- Bó hoa Tình Yêu từ AN Flower Store là sự kết hợp tình tế giữa
-              những bông hồng đỏ rực rỡ – biểu tượng của tình yêu mãnh liệt,
-              cùng những bông hồa trắng tinh khôi và vẻ đẹp thuần khiết của
-              nhánh lá xanh. Mỗi cành hoa đều được chọn lọc kỹ lưỡng, mang đến
-              thông điệp yêu thương chan chứa nhất. -->
-            </p>
+            <p></p>
           </div>
           <button class="add-to-cart">Thêm vào giỏ hàng</button>
           <div class="delivery-info">
@@ -262,157 +241,6 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        // Lấy productId từ URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get("id");
-
-        if (!productId) {
-          window.location.href = "404.html";
-          return;
-        }
-
-        try {
-          // Fetch chi tiết sản phẩm
-          const response = await fetch(
-            `https://localhost:7206/api/Products/${productId}`
-          );
-          if (!response.ok) throw new Error("Product not found");
-
-          const product = await response.json();
-
-          // Cập nhật breadcrumb
-          updateBreadcrumb(product);
-
-          // Cập nhật gallery ảnh
-          updateProductGallery(product);
-
-          // Cập nhật thông tin sản phẩm
-          updateProductInfo(product);
-
-          // Load sản phẩm liên quan
-          await fetchRelatedProducts(product.categoryId, product.id);
-        } catch (error) {
-          console.error("Error:", error);
-          window.location.href = "404.html";
-        }
-      });
-
-      // Hàm cập nhật breadcrumb
-      function updateBreadcrumb(product) {
-        const breadcrumb = document.querySelector(".breadcrumb");
-        breadcrumb.innerHTML = `
-    <li><a href="Home.html">Trang chủ</a></li>
-    <li><a href="Product.html">Sản phẩm</a></li>
-    <li>${product.name}</li>
-  `;
-      }
-
-      // Hàm cập nhật gallery ảnh
-      function updateProductGallery(product) {
-        const gallery = document.querySelector(".product-gallery");
-        gallery.innerHTML = `
-    <img src="https://localhost:7206${product.image}" 
-         alt="${product.name}" 
-         class="main-image" />
-    <div class="thumbnail-container">
-      <img src="https://localhost:7206${product.image}" 
-           alt="Thumbnail" 
-           class="thumbnail active" />
-      <!-- Có thể thêm nhiều thumbnail khác nếu có -->
-    </div>
-  `;
-      }
-
-      // Hàm cập nhật thông tin sản phẩm
-      function updateProductInfo(product) {
-        document.querySelector(".product-title").textContent = product.name;
-        document.querySelector(
-          ".product-price"
-        ).textContent = `${product.price.toLocaleString("vi-VN")}đ`;
-
-        const shortDesc = document.querySelector(
-          ".product-short-description p"
-        );
-        shortDesc.textContent = product.shortDescription;
-
-        // Thêm mô tả đầy đủ nếu có phần đó trong HTML
-        const fullDesc = document.querySelector(".product-full-description");
-        if (fullDesc) {
-          fullDesc.innerHTML = `<p>${product.description}</p>`;
-        }
-
-        // Cập nhật các thông tin khác liên quan
-        const categoryInfo = document.querySelector(".product-category");
-        if (categoryInfo) {
-          categoryInfo.textContent = `Danh mục: ${product.category.name}`;
-        }
-
-        const descriptionAuthor = document.querySelector(".description-author");
-        const descriptionContent = document.querySelector(
-          ".description-content p"
-        );
-
-        if (descriptionAuthor) {
-          descriptionAuthor.textContent = `❤️ ${product.name} ❤️`;
-        }
-
-        if (descriptionContent) {
-          descriptionContent.textContent = product.description;
-        }
-      }
-
-      // Hàm fetch sản phẩm liên quan
-      async function fetchRelatedProducts(categoryId, currentProductId) {
-        try {
-          const response = await fetch(
-            `https://localhost:7206/api/Products?categoryId=${categoryId}`
-          );
-          const products = await response.json();
-
-          // Lọc bỏ sản phẩm hiện tại và lấy tối đa 4 sản phẩm
-          const relatedProducts = products
-            .filter((p) => p.id != currentProductId)
-            .slice(0, 4);
-
-          renderRelatedProducts(relatedProducts);
-        } catch (error) {
-          console.error("Lỗi khi lấy sản phẩm liên quan:", error);
-          document.querySelector(".products-grid").innerHTML =
-            '<p class="no-products">Hiện chưa có sản phẩm liên quan</p>';
-        }
-      }
-
-      // Hàm render sản phẩm liên quan
-      function renderRelatedProducts(products) {
-        const productsGrid = document.querySelector(".products-grid");
-        if (!productsGrid) return;
-
-        if (products.length === 0) {
-          productsGrid.innerHTML =
-            '<p class="no-products">Hiện chưa có sản phẩm liên quan</p>';
-          return;
-        }
-
-        productsGrid.innerHTML = products
-          .map(
-            (product) => `
-    <a href="Detail.html?id=${product.id}" class="product-card">
-      <img src="https://localhost:7206${product.image}" 
-           alt="${product.name}" 
-           class="product-card-image" />
-      <div class="product-card-info">
-        <h3 class="product-card-title">${product.name}</h3>
-        <div class="product-card-price">${product.price.toLocaleString(
-          "vi-VN"
-        )}đ</div>
-      </div>
-    </a>
-  `
-          )
-          .join("");
-      }
-    </script>
+    <script src="js/DetailHandle.js"></script>
   </body>
 </html>

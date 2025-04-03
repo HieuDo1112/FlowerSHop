@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="./css/PolicyStyle.css" />
+    <link rel="stylesheet" href="./css/PaymentStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -30,7 +30,7 @@
           </div>
 
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto gap-5 nav-link list-unstyled">
+            <ul class="navbar-nav mx-auto gap-5 nav-link">
               <li class="nav-item">
                 <a class="nav-link" href="Home.html">Trang chủ</a>
               </li>
@@ -59,93 +59,127 @@
       </nav>
     </header>
 
-    <!-- Policy -->
-    <div class="policy-container">
-      <h1 style="color: #de85a0">CHÍNH SÁCH & ĐIỀU KHOẢN</h1>
+    <!-- Title-->
+    <div class="category-header">
+      <h1 class="category-title">
+        <span class="category-title-pink">Thanh Toán</span>
+        <span class="category-title-black">Đơn Hàng</span>
+      </h1>
+    </div>
 
-      <section>
-        <h2>1. Chính sách bảo mật</h2>
-        <p>
-          NA Flower Store cam kết bảo vệ quyền riêng tư và thông tin cá nhân của
-          khách hàng. Khi sử dụng dịch vụ của chúng tôi, bạn đồng ý với các điều
-          khoản dưới đây:
-        </p>
-
-        <ul>
-          <li>
-            <strong>Thu thập thông tin:</strong> Chúng tôi thu thập các thông
-            tin như họ tên, số điện thoại, email, địa chỉ giao hàng nhằm phục vụ
-            đơn hàng và chăm sóc khách hàng.
-          </li>
-
-          <li>
-            <strong>Bảo vệ thông tin:</strong> Mọi thông tin cá nhân đều được
-            bảo mật trong hệ thống, không chia sẻ cho bên thứ ba ngoại trừ
-            trường hợp pháp luật yêu cầu.
-          </li>
-
-          <li>
-            <strong>Thanh toán an toàn:</strong> Chúng tôi sử dụng các phương
-            thức thanh toán bảo mật, đảm bảo thông tin tài khoản của bạn được mã
-            hóa và an toàn.
-          </li>
-
-          <li>
-            <strong>Quyền lợi khách hàng:</strong> Bạn có quyền yêu cầu chỉnh
-            sửa hoặc xóa thông tin cá nhân bất kỳ lúc nào bằng cách liên hệ với
-            chúng tôi.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>2. Điều khoản sử dụng</h2>
-        <p>
-          Khi truy cập và mua hàng tại NA Flower Store, bạn đồng ý với các điều
-          khoản sau:
-        </p>
-
-        <ul>
-          <li>
-            <strong>Xác nhận:</strong> Đơn hàng chỉ được xác nhận khi chúng tôi
-            liên hệ xác nhận thông tin.
-          </li>
-
-          <li>
-            <strong>Thanh toán:</strong> Chúng tôi hỗ trợ nhiều phương thức
-            thanh toán như tiền mặt, chuyển khoản, ví điện tử.
-          </li>
-
-          <li>
-            <strong>Giao hàng:</strong> Đảm bảo giao hàng đúng thời gian cam
-            kết, nhưng có thể có chênh lệch do yếu tố khách quan (thời tiết,
-            giao thông...).
-          </li>
-
-          <li>
-            <strong>Đổi trả:</strong> Chúng tôi chấp nhận đổi trả hàng lý do hư
-            hỏng trong quá trình vận chuyển, vui lòng liên hệ trong vòng 2 giờ
-            sau khi nhận hàng.
-          </li>
-
-          <li>
-            <strong>Quyền từ chối:</strong> Chúng tôi có quyền từ chối hoặc hủy
-            đơn hàng nếu phát hiện dấu hiệu gian lận.
-          </li>
-        </ul>
-      </section>
-
-      <div class="contact-info">
-        <p><strong>Mọi thắc mắc vui lòng liên hệ:</strong></p>
-        <p>Hotline: 0123456789</p>
-        <p>Email: support@naflowerstore.com</p>
-        <p>Địa chỉ cửa hàng: Tầng 16 - Tòa nhà U-silk 01</p>
-      </div>
-
-      <p class="highlight">
-        NA Flower Store - Đem yêu thương đến từng khoảnh khắc!
+    <div id="success-message" class="success-message" style="display: none">
+      <h2>Success Payment</h2>
+      <h3>Đặt hàng thành công</h3>
+      <p>
+        Bạn đã đặt hàng với NA Flower Store thành công. Chúng tôi sẽ liên hệ với
+        bạn sớm nhất.
       </p>
     </div>
+
+    <!-- Checkout -->
+    <section class="checkout-section">
+      <div class="container">
+        <div class="checkout-form">
+          <div class="customer-info">
+            <h3>Thông tin khách hàng</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="last-name">Họ</label>
+                <input type="text" id="last-name" placeholder="VD: Bạch" />
+                <div class="error-text" id="first-name-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="first-name">Tên</label>
+                <input type="text" id="first-name" placeholder="VD: Khánh An" />
+                <div class="error-text" id="first-name-error"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="VD: bachan@gmail.com" />
+              <div class="error-text" id="first-name-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Địa chỉ</label>
+              <input
+                type="text"
+                id="address"
+                placeholder="VD: Tầng 16 - Tòa U-silk 01" />
+              <div class="error-text" id="first-name-error"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">Thành phố/Tỉnh</label>
+                <input type="text" id="city" placeholder="VD: Hà Nội" />
+                <div class="error-text" id="first-name-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="zip-code">Mã bưu điện</label>
+                <input type="text" id="zip-code" placeholder="VD: 10000" />
+                <div class="error-text" id="first-name-error"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Số điện thoại</label>
+              <input type="tel" id="phone" placeholder="VD: 123456789" />
+              <div class="error-text" id="first-name-error"></div>
+            </div>
+          </div>
+
+          <div class="order-summary">
+            <h3>Thông tin đơn hàng</h3>
+
+            <div class="order-items" id="orderItemsContainer"></div>
+
+            <div class="order-totals">
+              <div class="total-row">
+                <span>Tổng đơn hàng:</span>
+                <span class="total-amount" id="totalAmount"></span>
+              </div>
+              <div class="total-row">
+                <span>Phí vận chuyển</span>
+                <span class="shipping">Miễn Phí</span>
+              </div>
+            </div>
+
+            <div class="payment-methods">
+              <h3>Phương thức thanh toán</h3>
+              <div class="payment-option">
+                <input type="radio" id="cod" name="payment" checked />
+                <label for="cod">Thanh toán sau khi vận chuyển</label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" id="online" name="payment" />
+                <label for="online">Thanh toán online</label>
+              </div>
+
+              <!-- Thêm phần hiển thị QR -->
+              <div
+                class="qr-code-container"
+                id="qrCodeContainer"
+                style="display: none">
+                <img
+                  src="./image/486576381_1182016096934158_5072424719767969002_n.jpg"
+                  alt="Mã QR thanh toán"
+                  class="qr-code" />
+                <p class="qr-instruction">Quét mã QR để thanh toán</p>
+              </div>
+            </div>
+            <button type="button" class="place-order-btn" id="placeOrderBtn">
+              Đặt Hàng
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -238,6 +272,6 @@
       </div>
     </footer>
 
-    <script></script>
+    <script src="./js/PaymentHandle.js"></script>
   </body>
 </html>

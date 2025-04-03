@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -289,97 +289,6 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const bestSellingList = document.getElementById("bestSellingList");
-        const newestList = document.getElementById("newestList");
-        const bestSellingButtons = document.querySelectorAll(
-          ".best-selling-categories .category-btn"
-        );
-        const newestButtons = document.querySelectorAll(
-          ".newest-categories .category-btn"
-        );
-
-        let bestSellingCategory = 1; // Mặc định danh mục đầu tiên của Best-Selling
-        let newestCategory = 1; // Mặc định danh mục đầu tiên của Newest
-
-        fetchProducts(bestSellingCategory, bestSellingList, 0); // Best-Selling lấy từ index 0
-        fetchProducts(newestCategory, newestList, 3); // Newest lấy từ index 3
-
-        // Xử lý sự kiện chọn danh mục Best-Selling
-        bestSellingButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            bestSellingButtons.forEach((btn) => btn.classList.remove("active"));
-            this.classList.add("active");
-
-            bestSellingCategory = this.getAttribute("data-category");
-            fetchProducts(bestSellingCategory, bestSellingList, 0);
-          });
-        });
-
-        // Xử lý sự kiện chọn danh mục Newest
-        newestButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            newestButtons.forEach((btn) => btn.classList.remove("active"));
-            this.classList.add("active");
-
-            newestCategory = this.getAttribute("data-category");
-            fetchProducts(newestCategory, newestList, 3);
-          });
-        });
-
-        // Hàm fetch API lấy sản phẩm theo category
-        function fetchProducts(categoryId, targetList, startIndex) {
-          fetch("https://localhost:7206/api/Products")
-            .then((response) => response.json())
-            .then((data) => {
-              // Lọc sản phẩm theo categoryId
-              const filteredProducts = data.filter(
-                (product) => product.categoryId == categoryId
-              );
-              const selectedProducts = filteredProducts.slice(
-                startIndex,
-                startIndex + 3
-              ); // Lấy 3 sản phẩm theo vị trí
-              renderProducts(selectedProducts, targetList);
-            })
-            .catch((error) => console.error("Lỗi khi fetch API:", error));
-        }
-
-        // Hàm render danh sách sản phẩm (updated)
-        function renderProducts(products, targetList) {
-          targetList.innerHTML = products
-            .map(
-              (product) => `
-      <div class="product" data-id="${product.id}">
-        <img src="https://localhost:7206${product.image}" alt="${
-                product.name
-              }" />
-        <h3>${product.name}</h3>
-        <p class="price">${product.price.toLocaleString("vi-VN")}đ</p>
-        <div class="product-actions">
-          <a href="Cart.html" class="add-to-cart" data-id="${
-            product.id
-          }">Thêm vào giỏ hàng</a>
-          
-        </div>
-      </div>
-    `
-            )
-            .join("");
-
-          // Thêm sự kiện click vào toàn bộ sản phẩm
-          targetList.querySelectorAll(".product").forEach((product) => {
-            product.addEventListener("click", function (e) {
-              // Chỉ xử lý nếu click không phải vào nút action(except actio)
-              if (!e.target.closest(".product-actions")) {
-                const productId = this.dataset.id;
-                window.location.href = `Detail.html?id=${productId}`;
-              }
-            });
-          });
-        }
-      });
-    </script>
+    <script src="./js/HomeHandle.js"></script>
   </body>
 </html>
