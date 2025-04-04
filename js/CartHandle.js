@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItemsContainer.innerHTML = `
       <div class="cart-empty-message">
         <p>Giỏ hàng của bạn đang trống</p>
-        <a href="Products.html" class="continue-shopping">Tiếp tục mua sắm</a>
+        <a href="Product.html" class="continue-shopping">Tiếp tục mua sắm</a>
       </div>
     `;
     totalAmountElement.textContent = formatMoney(0);

@@ -13,7 +13,7 @@ pre {
 }
 
 section + section {
-  margin-top: 80px; /* Tạo khoảng cách giữa các section */
+  margin-top: 80px;
 }
 
 .border-cus {
